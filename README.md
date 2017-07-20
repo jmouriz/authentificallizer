@@ -1,6 +1,6 @@
 # AngularJS Satellizer Demo
 
-Este repositorio contiene un ejemplo completo y funcional de cómo usar [Satellizer]:(https://github.com/sahat/satellizer) en tu sitio, incluyendo el código del lado del servidor.
+Este repositorio contiene un ejemplo completo y funcional de cómo usar [Satellizer](https://github.com/sahat/satellizer) en tu sitio, incluyendo el código del lado del servidor.
 
 ## Importante
 
