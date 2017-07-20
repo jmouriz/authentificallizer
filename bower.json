@@ -1,0 +1,27 @@
+{
+  "name": "satellizer-demo",
+  "authors": [
+    "Juan Manuel <jmouriz@gmail.com>"
+  ],
+  "description": "Ejemplo de uso de Satellizer",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://infaserver.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-aria": "^1.6.5",
+    "angular-material-icons": "^0.7.1",
+    "angular-material": "^1.1.4",
+    "angular-animate": "^1.6.5",
+    "angular-messages": "^1.6.5",
+    "angular": "^1.6.5",
+    "satellizer": "^0.15.5"
+  }
+}
