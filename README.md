@@ -21,7 +21,7 @@ Editar los valores de configuración del archivo authorization/common/config.php
 
 Los valores de configuración (google|yahoo|microsoft|facebook)-authorization-provider contienen la URL de redirección que se debe configurar en el panel de desarrollador de cada proveedor.
 
-Google: https://console.cloud.google.com/
-Yahoo: https://developer.yahoo.com/
-Microsoft: https://apps.dev.microsoft.com/
-Facebook: https://developers.facebook.com/
+* Google: https://console.cloud.google.com/
+* Yahoo: https://developer.yahoo.com/
+* Microsoft: https://apps.dev.microsoft.com/
+* Facebook: https://developers.facebook.com/
