@@ -13,9 +13,11 @@ Leé el instructivo hasta el final y sólo prueba cuando hayas terminado de conf
 
 ## Instalación
 
+```
 bower install
 cd authorization/libraries
 composer install
+```
 
 ## Configuración
 
