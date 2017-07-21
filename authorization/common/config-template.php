@@ -1,8 +1,7 @@
 <?php
 $config = array();
 
-//$providers = "https://127.0.0.1/satellizer-full-stack-demo/authorization/providers";
-$providers = "http://localhost/~juanma/satellizer-full-stack-demo/authorization/providers";
+$providers = "https://127.0.0.1/satellizer-full-stack-demo/authorization/providers";
 
 $config['local-application-id'] = 'testclient';
 $config['google-application-id'] = 'GOOGLE APPLICATION ID';
