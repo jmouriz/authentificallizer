@@ -21,7 +21,7 @@ composer install
 
 ## Configuración
 
-Editar los valores de configuración del archivo authorization/common/config.php
+Copiar authorization/common/config-template.php authorization/common/config.php y editar los valores de configuración del archivo authorization/common/config.php.
 
 ## Configuración de los proveedores
 
