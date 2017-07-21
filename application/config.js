@@ -10,7 +10,9 @@ application.config(function($authProvider) {
       clientId: config['local-application-id'],
       url: config['local-authorization-provider-link'],
       redirectUri: config['local-authorization-provider'],
-      authorizationEndpoint: 'https://localhost/~juanma/satellizer-full-stack-demo/authorization/server/authorize.php'
+      authorizationEndpoint: 'https://localhost/~juanma/satellizer-full-stack-demo/authorization/server/authorize.php',
+      requiredUrlParams: ['state'],
+      state: 'xyz'
    });
    $authProvider.facebook({
       clientId: config['facebook-application-id'],

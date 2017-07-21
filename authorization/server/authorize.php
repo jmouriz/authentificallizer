@@ -12,9 +12,9 @@ if (!$server->validateAuthorizeRequest($request, $response)) {
 if (empty($_POST)) {
    exit('
 <form method="post">
-   <label>Do You Authorize TestClient?</label><br />
-   <input type="submit" name="authorized" value="yes">
-   <input type="submit" name="authorized" value="no">
+   <label>¿Quieres autorizar a TestClient?</label><br />
+   <button type="submit" name="authorized" value="yes">Sí</button>
+   <button type="submit" name="authorized" value="no">No</button>
 </form>');
 }
 
