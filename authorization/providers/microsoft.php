@@ -2,8 +2,6 @@
 require 'libraries/vendor/autoload.php';
 require 'common/config.php';
 
-use GuzzleHttp\Client;
-
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('POST', 'https://login.microsoftonline.com/common/oauth2/v2.0/token', array('form_params' => array(

@@ -2,8 +2,6 @@
 require 'libraries/vendor/autoload.php';
 require 'common/config.php';
 
-use GuzzleHttp\Client;
-
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('POST', 'https://accounts.google.com/o/oauth2/token', array('form_params' => array(

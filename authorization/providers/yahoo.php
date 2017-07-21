@@ -2,8 +2,6 @@
 require 'libraries/vendor/autoload.php';
 require 'common/config.php';
 
-use GuzzleHttp\Client;
-
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('POST', 'https://api.login.yahoo.com/oauth2/get_token', array('form_params' => array(

@@ -1,8 +1,6 @@
 <?php
 require 'libraries/vendor/autoload.php';
 
-use GuzzleHttp\Client;
-
 session_start();
 $token = $_SESSION['token'];
 

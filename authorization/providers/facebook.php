@@ -2,8 +2,6 @@
 require 'libraries/vendor/autoload.php';
 require 'common/config.php';
 
-use GuzzleHttp\Client;
-
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('POST', 'https://graph.facebook.com/v2.7/oauth/access_token', array('form_params' => array(
