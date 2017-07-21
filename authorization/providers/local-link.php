@@ -1,20 +1,19 @@
 <?php
 require '../libraries/vendor/autoload.php';
-require '../common/config.php';
 
 session_start();
 $token = $_SESSION['token'];
 
 $client = new GuzzleHttp\Client();
-$response = $client->request('GET', 'https://www.googleapis.com/plus/v1/people/me/openIdConnect', array('headers' => array(
-   'Authorization' => "Bearer $token"
+$response = $client->request('POST', 'https://localhost/~juanma/satellizar-full-stack-demo/authorization/server/resource.php', array('form_params' => array(
+   'access_token' => $token
 )));
 $profile = json_decode($response->getBody(), true);
 
 $user = array();
 $user['email'] = $profile['email'];
-$user['firstname'] = $profile['given_name'];
-$user['lastname'] = $profile['family_name'];
+$user['firstname'] = $profile['first_name'];
+$user['lastname'] = $profile['last_name'];
 
 json(array('status' => 'ok', 'user' => $user));
 ?>

@@ -1,5 +1,5 @@
 <?php
-require 'libraries/vendor/autoload.php';
+require '../libraries/vendor/autoload.php';
 
 session_start();
 $token = $_SESSION['token'];

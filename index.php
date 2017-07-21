@@ -26,6 +26,12 @@ $config = json_encode($config);
          <h1>AngularJS Satellizer Demo</h1>
    
          <h4 ng-if="user.authenticated">Bienvenido {{user.firstname}} {{user.lastname}}, tu correo electrónico es {{user.email}}</h4>
+
+         <md-button ng-click="authenticate('local')" class="local">
+            <md-tooltip md-direction="top" md-autohide="true">Inciar con el servidor local</md-tooltip>
+            <ng-md-icon icon="favorite"></ng-md-icon>
+            LOCAL
+         </md-button>
    
          <md-button ng-click="authenticate('facebook')" class="facebook">
             <md-tooltip md-direction="top" md-autohide="true">Inciar con Facebook</md-tooltip>

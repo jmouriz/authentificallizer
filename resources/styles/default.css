@@ -12,57 +12,43 @@ div.login {
    border: 2px solid black;
 }
 
-.md-button.facebook:not([disabled]) {
+.md-button.local:not([disabled]),
+.md-button.local:not([disabled]):hover {
+   background-color: black;
+}
+
+.md-button.facebook:not([disabled]),
+.md-button.facebook:not([disabled]):hover {
    background-color: #3b5998;
 }
 
-.md-button.google:not([disabled]) {
+.md-button.google:not([disabled]),
+.md-button.google:not([disabled]):hover {
    background-color: #d34836;
 }
 
-.md-button.microsoft:not([disabled]) {
+.md-button.microsoft:not([disabled]),
+.md-button.microsoft:not([disabled]):hover {
    background-color: #125acd;
 }
 
-.md-button.yahoo:not([disabled]) {
+.md-button.yahoo:not([disabled]),
+.md-button.yahoo:not([disabled]):hover {
    background-color: #600e85;
 }
 
-.md-button.whatsapp:not([disabled]) {
-   background-color: #25d366;
-}
-
+.md-button.local,
 .md-button.facebook,
 .md-button.google,
 .md-button.microsoft,
-.md-button.yahoo,
-.md-button.whatsapp {
+.md-button.yahoo {
    color: white;
    font-weight: 900;
    padding-right: 16px;
    width: 100%;
 }
 
-.md-button.facebook:not([disabled]):hover {
-   background-color: #3b5998;
-}
-
-.md-button.google:not([disabled]):hover {
-   background-color: #d34836;
-}
-
-.md-button.microsoft:not([disabled]):hover {
-   background-color: #125acd;
-}
-
-.md-button.yahoo:not([disabled]):hover {
-   background-color: #600e85;
-}
-
-.md-button.whatsapp:not([disabled]):hover {
-   background-color: #25d366;
-}
-
+.md-button.local:not([disabled]):hover,
 .md-button.facebook:not([disabled]):hover,
 .md-button.google:not([disabled]):hover,
 .md-button.microsoft:not([disabled]):hover,

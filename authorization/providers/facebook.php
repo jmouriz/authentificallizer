@@ -1,6 +1,6 @@
 <?php
-require 'libraries/vendor/autoload.php';
-require 'common/config.php';
+require '../libraries/vendor/autoload.php';
+require '../common/config.php';
 
 $client = new GuzzleHttp\Client();
 

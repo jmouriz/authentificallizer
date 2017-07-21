@@ -5,6 +5,13 @@ application.config(['ngMdIconServiceProvider', function(ngMdIconServiceProvider)
 }]);
 
 application.config(function($authProvider) {
+   $authProvider.oauth2({
+      name: 'local',
+      clientId: config['local-application-id'],
+      url: config['local-authorization-provider-link'],
+      redirectUri: config['local-authorization-provider'],
+      authorizationEndpoint: 'https://localhost/~juanma/satellizer-full-stack-demo/authorization/server/authorize.php'
+   });
    $authProvider.facebook({
       clientId: config['facebook-application-id'],
       url: config['facebook-authorization-provider-link'],
