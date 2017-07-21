@@ -16,6 +16,12 @@ $user['email'] = $profile['userPrincipalName'];
 $user['firstname'] = $profile['givenName'];
 $user['lastname'] = $profile['surname'];
 
-json(array('status' => 'ok', 'user' => $user));
+$response = json_encode(array('status' => 'ok', 'user' => $user));
+$origin = $_SERVER['HTTP_ORIGIN'];
+$length = strlen($response);
+header("Access-Control-Allow-Origin: $origin");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json; charset=utf-8");
+header("Content-Length: $length");
+print $response;
 ?>
-
