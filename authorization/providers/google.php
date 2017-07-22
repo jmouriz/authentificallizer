@@ -13,6 +13,6 @@ $response = $client->request('POST', 'https://accounts.google.com/o/oauth2/token
 )));
 $token = json_decode($response->getBody(), true);
 
-session_start();
+mof\session();
 $_SESSION['token'] = $token['access_token'];
 ?>

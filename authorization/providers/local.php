@@ -13,6 +13,6 @@ $response = $client->request('POST', $config['get-token-endpoint'], array('form_
 )));
 $token = json_decode($response->getBody(), true);
 
-session_start();
+mof\session();
 $_SESSION['token'] = $token['access_token'];
 ?>

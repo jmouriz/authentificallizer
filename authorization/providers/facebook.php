@@ -12,6 +12,6 @@ $response = $client->request('POST', 'https://graph.facebook.com/v2.7/oauth/acce
 )));
 $token = json_decode($response->getBody(), true);
 
-session_start();
+mof\session();
 $_SESSION['token'] = $token['access_token'];
 ?>

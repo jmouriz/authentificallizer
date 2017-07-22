@@ -2,6 +2,6 @@
    "require": {
       "guzzlehttp/guzzle": "^6.3",
       "bshaffer/oauth2-server-php": "^1.9",
-      "jmouriz/mof": "^1.0"
+      "jmouriz/mof": "^1.1"
    }
 }

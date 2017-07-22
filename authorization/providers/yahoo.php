@@ -13,6 +13,6 @@ $response = $client->request('POST', 'https://api.login.yahoo.com/oauth2/get_tok
 )));
 $token = json_decode($response->getBody(), true);
 
-session_start();
+mof\session();
 $_SESSION['token'] = $token['access_token'];
 ?>
