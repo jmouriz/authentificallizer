@@ -2,6 +2,8 @@
 
 Este repositorio contiene un ejemplo completo y funcional de cómo usar [Satellizer](https://github.com/sahat/satellizer) para iniciar sesión usando OAuth 2.0 con diversos proveedores en tu sitio y recibir información del perfil del usuario. Incluye el código del lado del servidor para enlazar con tus usuarios y un servidor OAuth 2.0 propio.
 
+# Pantallazos
+
 ![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-1.png)
 
 ![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-2.png)
@@ -37,3 +39,8 @@ composer install
 
 1. Copia authorization/common/config-template.php a authorization/common/config.php y edita este último con los valores de configuración para cada proveedor.
 2. Ve a la dirección http://localhost/satellizer-full-stack-demo/setup.php para crear la base de datos y configura la URL de redirección en cada proveedor.
+
+## Pendientes
+
+1. Hacer un módulo para AngularJS y permitir la instalación del lado del cliente con Bower o NPM.
+2. Permitir la instalación del lado del servidor con Composer.
