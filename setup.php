@@ -1,4 +1,5 @@
 <?php
+require 'authorization/libraries/vendor/autoload.php';
 require 'authorization/common/config.php';
 $path = __DIR__;
 $db = new PDO("sqlite:$path/authorization/server/authorization.db");
@@ -9,6 +10,9 @@ $sentence->bindParam(':client', $config['local-application-id']);
 $sentence->bindParam(':password', $config['secure']['local-application-secret']);
 $sentence->bindParam(':uri', $config['local-authorization-provider']);
 $sentence->execute();
+mof\restore($users);
+$users['albert'] = array('email' => 'albert@example.com', 'firstname' => 'Albert', 'lastname' => 'Einstein', 'password' => mof\password('1234'));
+mof\store($users);
 ?>
 <!doctype html>
 <html lang="es">
@@ -29,6 +33,11 @@ $sentence->execute();
          <li><b>Yahoo</b>: <?php print $config['yahoo-authorization-provider']; ?> <a href="https://developer.yahoo.com/">Configurar</a></li>
          <li><b>Facebook</b>: <?php print $config['facebook-authorization-provider']; ?> <a href="https://developers.facebook.com/">Configurar</a></li>
       </ul>
-      </p>Puedes <a href="index.php">comenzar</a> una vez que hayas configurado todos los proveedores.</p>
+      </p>Las credenciales de acceso a este servidor son:</p>
+      <ul>
+         <li><b>Usuario</b>: albert</li>
+         <li><b>Contraseña</b>: 1234</li>
+      </ul>
+      </p>Puedes <a href="index.php">comenzar</a> una vez que hayas configurado los proveedores que utilizarás.</p>
    </body>
 </html>

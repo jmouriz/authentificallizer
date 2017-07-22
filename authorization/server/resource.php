@@ -2,19 +2,21 @@
 require 'server.php';
 
 $request = OAuth2\Request::createFromGlobals();
+$response = new OAuth2\Response();
 
-if (!$server->verifyResourceRequest($request)) {
+if (!$server->verifyResourceRequest($request, $response, 'email')) {
+   $server->getResponse()->send();
+   die;
+}
+
+if (!$server->verifyResourceRequest($request, $response, 'profile')) {
    $server->getResponse()->send();
    die;
 }
 
 $token = $server->getAccessTokenData($request);
+$username = $token['user_id'];
 
-// $token['user_id']
-$profile = array();
-$profile['email'] = 'john.doe@example.com';
-$profile['firstname'] = 'John';
-$profile['lastname'] = 'Doe';
-
-mof\json($profile);
+mof\restore($users);
+mof\json($users[$username]);
 ?>

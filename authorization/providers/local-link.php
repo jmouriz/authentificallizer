@@ -7,7 +7,8 @@ $token = $_SESSION['token'];
 
 $client = new GuzzleHttp\Client();
 $response = $client->request('POST', $config['resource-api-endpoint'], array('form_params' => array(
-   'access_token' => $token
+   'access_token' => $token,
+   'scope' => 'email,profile'
 )));
 $profile = json_decode($response->getBody(), true);
 

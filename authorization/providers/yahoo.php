@@ -5,7 +5,7 @@ require '../common/config.php';
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('POST', 'https://api.login.yahoo.com/oauth2/get_token', array('form_params' => array(
-   'code' => $_GET['code'],
+   'code' => mof\input('code'),
    'client_id' => $config['yahoo-application-id'],
    'redirect_uri' => $config['yahoo-authorization-provider'],
    'client_secret' => $config['secure']['yahoo-application-secret'],

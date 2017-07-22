@@ -5,7 +5,7 @@ require '../common/config.php';
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('POST', 'https://login.microsoftonline.com/common/oauth2/v2.0/token', array('form_params' => array(
-   'code' => $_GET['code'],
+   'code' => mof\input('code'),
    'client_id' => $config['microsoft-application-id'],
    'redirect_uri' => $config['microsoft-authorization-provider'],
    'client_secret' => $config['secure']['microsoft-application-secret'],

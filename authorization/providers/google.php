@@ -5,7 +5,7 @@ require '../common/config.php';
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('POST', 'https://accounts.google.com/o/oauth2/token', array('form_params' => array(
-   'code' => $_GET['code'],
+   'code' => mof\input('code'),
    'client_id' => $config['google-application-id'],
    'redirect_uri' => $config['google-authorization-provider'],
    'client_secret' => $config['secure']['google-application-secret'],

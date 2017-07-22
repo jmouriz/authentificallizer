@@ -11,7 +11,9 @@ application.config(function($authProvider) {
       url: config['local-authorization-provider-link'],
       redirectUri: config['local-authorization-provider'],
       authorizationEndpoint: config['authorization-endpoint'],
-      requiredUrlParams: ['state'],
+      scope: ['email', 'profile'],
+      scopeDelimiter: ' ',
+      requiredUrlParams: ['state', 'scope'],
       state: 'xyz'
    });
    $authProvider.facebook({

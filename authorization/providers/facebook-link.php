@@ -5,10 +5,9 @@ mof\session();
 $token = $_SESSION['token'];
 
 $client = new GuzzleHttp\Client();
-$fields = 'id,email,first_name,last_name,link,name';
 $response = $client->request('POST', 'https://graph.facebook.com/v2.7/me', array('form_params' => array(
    'access_token' => $token,
-   'fields' => $fields
+   'fields' => 'id,email,first_name,last_name,link,name'
 )));
 $profile = json_decode($response->getBody(), true);
 
