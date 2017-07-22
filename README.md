@@ -21,6 +21,5 @@ composer install
 
 ## Configuración
 
-1. Copiar authorization/common/config-template.php a authorization/common/config.php. 
-2. Ve a la dirección http://localhost/satellizer-full-stack-demo/setup.php para crear la base de datos.
-3. Configurar los proveedores con los valores devueltos en el paso anterior.
+1. Copia authorization/common/config-template.php a authorization/common/config.php y edita este último con los valores de configuración para cada proveedor.
+2. Ve a la dirección http://localhost/satellizer-full-stack-demo/setup.php para crear la base de datos y configura la URL de redireccionamiento en cada proveedor.
