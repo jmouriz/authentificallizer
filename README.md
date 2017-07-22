@@ -21,13 +21,6 @@ composer install
 
 ## Configuración
 
-Copiar authorization/common/config-template.php authorization/common/config.php y editar los valores de configuración del archivo authorization/common/config.php.
-
-## Configuración de los proveedores
-
-Los valores de configuración (google|yahoo|microsoft|facebook)-authorization-provider contiene la URL de redirección que se debe configurar en el panel de desarrollador de cada proveedor.
-
-* Google: https://console.cloud.google.com/
-* Yahoo: https://developer.yahoo.com/
-* Microsoft: https://apps.dev.microsoft.com/
-* Facebook: https://developers.facebook.com/
+1. Copiar authorization/common/config-template.php a authorization/common/config.php. 
+2. Ve a la dirección http://localhost/satellizer-full-stack-demo/setup.php para crear la base de datos.
+3. Configurar los proveedores con los valores devueltos en el paso anterior.

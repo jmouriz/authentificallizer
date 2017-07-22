@@ -1,7 +1,13 @@
 <?php
 $config = array();
 
-$providers = "https://127.0.0.1/satellizer-full-stack-demo/authorization/providers";
+$base = 'https://127.0.0.1/satellizer-full-stack-demo/authorization';
+$server = "$base/server";
+$providers = "$base/providers";
+
+$config['authorization-endpoint'] = "$server/authorize.php";
+$config['get-token-endpoint'] = "$server/token.php";
+$config['resource-api-endpoint'] = "$server/resource.php";
 
 $config['local-application-id'] = 'testclient';
 $config['google-application-id'] = 'GOOGLE APPLICATION ID';

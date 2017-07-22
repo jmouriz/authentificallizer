@@ -1,3 +1,11 @@
+drop table if exists oauth_clients;
+drop table if exists oauth_access_tokens;
+drop table if exists oauth_authorization_codes;
+drop table if exists oauth_refresh_tokens;
+drop table if exists oauth_users;
+drop table if exists oauth_scopes;
+drop table if exists oauth_jwt;
+
 create table oauth_clients (
    client_id varchar(80) not null,
    client_secret varchar(80),
@@ -55,5 +63,3 @@ create table oauth_jwt (
    public_key varchar(2000),
    constraint client_id_pk primary key (client_id)
 );
-
-insert into oauth_clients (client_id, client_secret, redirect_uri) values ("testclient", "testpass", "http://localhost/~juanma/satellizer-full-stack-demo/authorization/providers/local.php");

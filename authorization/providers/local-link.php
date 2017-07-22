@@ -5,7 +5,7 @@ session_start();
 $token = $_SESSION['token'];
 
 $client = new GuzzleHttp\Client();
-$response = $client->request('POST', 'https://localhost/~juanma/satellizar-full-stack-demo/authorization/server/resource.php', array('form_params' => array(
+$response = $client->request('POST', $config['resource-api-endpoint'], array('form_params' => array(
    'access_token' => $token
 )));
 $profile = json_decode($response->getBody(), true);

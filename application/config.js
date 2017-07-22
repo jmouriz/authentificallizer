@@ -10,7 +10,7 @@ application.config(function($authProvider) {
       clientId: config['local-application-id'],
       url: config['local-authorization-provider-link'],
       redirectUri: config['local-authorization-provider'],
-      authorizationEndpoint: 'https://localhost/~juanma/satellizer-full-stack-demo/authorization/server/authorize.php',
+      authorizationEndpoint: config['authorization-endpoint'],
       requiredUrlParams: ['state'],
       state: 'xyz'
    });
