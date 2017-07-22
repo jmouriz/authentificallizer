@@ -21,8 +21,8 @@ $sentence->execute();
       <link rel="stylesheet" href="resources/styles/setup.css" />
    </head>
    <body>
-      <h1>Bien hecho</h1>
-      <p>Ya puedes comenzar, asegúrate de haber configurado correctamente las URL de redireccionamiento en el archivo <b>authorization/common/config.php</b>:</p>
+      <h2>Bien hecho</h2>
+      <p>Ya puedes comenzar, asegúrate de haber configurado correctamente las URL de redirección en el archivo <b>authorization/common/config.php</b>:</p>
       <ul>
          <li><b>Google</b>: <?php print $config['google-authorization-provider']; ?> <a href="https://console.cloud.google.com/">Configurar</a></li>
          <li><b>Microsoft</b>: <?php print $config['microsoft-authorization-provider']; ?> <a href="https://apps.dev.microsoft.com/">Configurar</a></li>
