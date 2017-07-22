@@ -12,12 +12,12 @@
    <body>
       <div class="container">
          <form method="post">
-            <h4>Iniciar sesión en servidor local</h4>
+            <h4>Iniciar sesión</h4>
             <input name="username" type="text" placeholder="Usuario" /><br />
             <input name="password" type="password" placeholder="Contraseña" /><br />
             <button type="submit">Iniciar</button>
             <button type="reset">Cancelar</button>
-            <p>¿Aún no tienes cuenta? <a href="authorization/templates/register.php">Regístrate una</a></p>
+            <p>¿Aún no tienes cuenta? <a href="authorization/templates/register.php">Registra una nueva</a></p>
          </div>
       </center>
    <body>

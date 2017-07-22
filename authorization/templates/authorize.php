@@ -22,7 +22,7 @@ $resources = $_SESSION['resources'];
       <div class="container">
          <form method="post">
             <h4>Solicitud de autorización</h4>
-            <p>Hola <?php print $firstname; ?> <?php print $lastname; ?> ¿quieres permitirle a <b><?php print $client; ?></b> acceder a los siguientes recursos?</p>
+            <p>Hola <?php print $firstname; ?>, ¿quieres permitirle a <b><?php print $client; ?></b> acceder a los siguientes recursos?</p>
             <ul>
             <?php foreach ($resources as $resource): ?>
               <li><?php print $resource ?></li>
