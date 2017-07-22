@@ -25,7 +25,7 @@ $config = json_encode($config);
       <div ng-controller="Login" class="login">
          <h1>AngularJS Satellizer Demo</h1>
    
-         <h4 ng-if="user.authenticated">Bienvenido {{user.firstname}} {{user.lastname}}, tu correo electrónico es {{user.email}}</h4>
+         <p ng-if="user.authenticated">Bienvenido {{user.firstname}} {{user.lastname}}, tu correo electrónico es {{user.email}}</p>
 
          <md-button ng-click="authenticate('local')" class="local">
             <md-tooltip md-direction="top" md-autohide="true">Inciar con el servidor local</md-tooltip>

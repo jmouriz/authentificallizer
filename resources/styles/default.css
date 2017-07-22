@@ -14,7 +14,7 @@ div.login {
 
 .md-button.local:not([disabled]),
 .md-button.local:not([disabled]):hover {
-   background-color: black;
+   background-color: #e91e63;
 }
 
 .md-button.facebook:not([disabled]),

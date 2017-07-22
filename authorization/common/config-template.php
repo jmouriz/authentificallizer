@@ -1,7 +1,7 @@
 <?php
 $config = array();
 
-$base = 'https://127.0.0.1/satellizer-full-stack-demo/authorization';
+$base = 'http://127.0.0.1/satellizer-full-stack-demo/authorization';
 $server = "$base/server";
 $providers = "$base/providers";
 

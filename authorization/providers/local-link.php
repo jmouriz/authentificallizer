@@ -1,5 +1,6 @@
 <?php
 require '../libraries/vendor/autoload.php';
+require '../common/config.php';
 
 session_start();
 $token = $_SESSION['token'];
@@ -12,8 +13,8 @@ $profile = json_decode($response->getBody(), true);
 
 $user = array();
 $user['email'] = $profile['email'];
-$user['firstname'] = $profile['first_name'];
-$user['lastname'] = $profile['last_name'];
+$user['firstname'] = $profile['firstname'];
+$user['lastname'] = $profile['lastname'];
 
 $response = json_encode(array('status' => 'ok', 'user' => $user));
 $origin = $_SERVER['HTTP_ORIGIN'];
