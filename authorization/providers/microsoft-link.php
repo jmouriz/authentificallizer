@@ -11,10 +11,19 @@ $response = $client->request('GET', 'https://graph.microsoft.com/v1.0/me', array
 )));
 $profile = json_decode($response->getBody(), true);
 
-$user = array();
-$user['email'] = $profile['userPrincipalName'];
-$user['firstname'] = $profile['givenName'];
-$user['lastname'] = $profile['surname'];
+$email = $profile['userPrincipalName'];
+$hash = hash('md5', $email);
+mof\restore($users);
+if (!array_key_exists($hash, $users)) {
+   $user = array();
+   $user['email'] = $email;
+   $user['firstname'] = $profile['givenName'];
+   $user['lastname'] = $profile['surname'];
+   $users[$hash] = $user;
+   mof\store($users);
+} else {
+   $user = $users[$hash];
+}
 
 mof\json(array('status' => 'ok', 'user' => $user));
 ?>

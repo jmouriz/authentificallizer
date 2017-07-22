@@ -11,10 +11,19 @@ $response = $client->request('POST', 'https://graph.facebook.com/v2.7/me', array
 )));
 $profile = json_decode($response->getBody(), true);
 
-$user = array();
-$user['email'] = $profile['email'];
-$user['firstname'] = $profile['first_name'];
-$user['lastname'] = $profile['last_name'];
+$email = $profile['email'];
+$hash = hash('md5', $email);
+mof\restore($users);
+if (!array_key_exists($hash, $users)) {
+   $user = array();
+   $user['email'] = $email;
+   $user['firstname'] = $profile['first_name'];
+   $user['lastname'] = $profile['last_name'];
+   $users[$hash] = $user;
+   mof\store($users);
+} else {
+   $user = $users[$hash];
+}
 
 mof\json(array('status' => 'ok', 'user' => $user));
 ?>

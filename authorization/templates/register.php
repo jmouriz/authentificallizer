@@ -48,7 +48,7 @@ if ($username || $email || $firstname || $lastname || $password) {
    <body>
       <div class="container">
          <form method="post">
-            <h4>Registra tu cuenta</h4>
+            <h4>Registro de cuenta</h4>
             <?php if ($exists): ?>
             <p class="error">El usuario ya existe, por favor, elige otro nombre</p>
             <?php endif ?>

@@ -11,10 +11,19 @@ $response = $client->request('GET', 'https://www.googleapis.com/plus/v1/people/m
 )));
 $profile = json_decode($response->getBody(), true);
 
-$user = array();
-$user['email'] = $profile['email'];
-$user['firstname'] = $profile['given_name'];
-$user['lastname'] = $profile['family_name'];
+$email = $profile['email'];
+$hash = hash('md5', $email);
+mof\restore($users);
+if (!array_key_exists($hash, $users)) {
+   $user = array();
+   $user['email'] = $email;
+   $user['firstname'] = $profile['given_name'];
+   $user['lastname'] = $profile['family_name'];
+   $users[$hash] = $user;
+   mof\store($users);
+} else {
+   $user = $users[$hash];
+}
 
 mof\json(array('status' => 'ok', 'user' => $user));
 ?>
