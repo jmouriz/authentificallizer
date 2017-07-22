@@ -1,19 +1,47 @@
+html {
+   height: 100%;
+}
+
 body {
    background: grey;
    height: 100%;
+   overflow: hidden;
    display: flex;
 }
 
-div.login {
+.container {
    max-width: 400px;
    background: white;
    margin: auto;
    padding: 64px;
    border: 2px solid black;
+   text-align: center;
 }
 
-h1 {
+form {
    text-align: center;
+}
+
+.error {
+   font-weight: 900;
+   color: red;
+}
+
+input {
+   margin: 4px;
+   padding: 3px;
+   border-width: 1px;
+}
+
+button {
+   margin-top: 6px;
+   border-width: 1px;
+   padding: 3px;
+   min-width: 50px;
+}
+
+ul {
+   text-align: left;
 }
 
 .md-button.local:not([disabled]),

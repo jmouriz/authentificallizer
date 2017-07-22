@@ -3,9 +3,14 @@ require '../libraries/vendor/autoload.php';
 require '../common/config.php';
 
 $client = new GuzzleHttp\Client();
+$code = mof\input('code');
+
+if (!$code) {
+   exit();
+}
 
 $response = $client->request('POST', $config['get-token-endpoint'], array('form_params' => array(
-   'code' => mof\input('code'),
+   'code' => $code,
    'grant_type' => 'authorization_code',
    'client_id' => $config['local-application-id'],
    'redirect_uri' => $config['local-authorization-provider'],

@@ -1,8 +1,42 @@
-body {
-   background-color: #2196f3;
-   color: white;
+.container {
+   max-width: inherit;
 }
 
 a {
-   color: yellow;
+   font-weight: 900;
+   color: #075bbf;
+   text-decoration: none;
+}
+
+table {
+   border: 2px solid #4f81bd;
+   margin: 1em auto;
+   border-collapse: collapse;
+}
+
+th, td {
+   padding: 4px 8px;
+}
+
+thead th {
+   background: #4f81bd;
+   text-align: left;
+   font-size: 15px;
+   color: #ffffff;
+}
+
+tr {
+   border-right: 1px solid #95b3d7;
+}
+
+tbody tr {
+   border-bottom: 1px solid #95b3d7;
+}
+
+tbody tr:nth-child(odd) {
+   background: #dbe5f0;
+}
+
+tbody th, tbody td {
+   border-right: 1px solid #95b3d7;
 }

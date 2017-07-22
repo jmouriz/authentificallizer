@@ -1,7 +1,7 @@
 <?php
 $config = array();
 
-$base = 'http://127.0.0.1/satellizer-full-stack-demo/authorization';
+$base = 'http://127.0.0.1/authentificallizer/authorization';
 $server = "$base/server";
 $providers = "$base/providers";
 
@@ -9,13 +9,13 @@ $config['authorization-endpoint'] = "$server/authorize.php";
 $config['get-token-endpoint'] = "$server/token.php";
 $config['resource-api-endpoint'] = "$server/resource.php";
 
-$config['local-application-id'] = 'testclient';
-$config['google-application-id'] = 'GOOGLE APPLICATION ID';
-$config['yahoo-application-id'] = 'YAHOO APPLICATION ID';
-$config['microsoft-application-id'] = 'MICROSOFT APPLICATION ID';
-$config['facebook-application-id'] = 'FACEBOOK APPLICATION ID';
+$config['local-application-id'] = 'Authentificallizer Demo';
+$config['google-application-id'] = false; // GOOGLE APPLICATION ID
+$config['yahoo-application-id'] = false; // YAHOO APPLICATION ID
+$config['microsoft-application-id'] = false; // MICROSOFT APPLICATION ID
+$config['facebook-application-id'] = false; // FACEBOOK APPLICATION ID
 
-$config['secure']['local-application-secret'] = 'testpass';
+$config['secure']['local-application-secret'] = '1234567890';
 $config['secure']['google-application-secret'] = 'GOOGLE APPLICATION SECRET';
 $config['secure']['yahoo-application-secret'] = 'YAHOO APPLICATION SECRET';
 $config['secure']['microsoft-application-secret'] = 'MICROSOFT APPLICATION SECRET';

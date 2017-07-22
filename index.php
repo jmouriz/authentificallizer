@@ -22,40 +22,42 @@ $config = json_encode($config);
    <body ng-controller="Application" ng-cloak>
       <md-backdrop class="md-opaque busy" ng-if="public.busy"></md-backdrop>
 
-      <div ng-controller="Login" class="login">
+      <div ng-controller="Login" class="container">
          <h1>Authentificallizer</h1>
    
+         <p class="error" ng-if="error && !user.authenticated">No se pudo iniciar sesión</p>
+
          <p ng-if="user.authenticated">Bienvenido {{user.firstname}} {{user.lastname}}, tu correo electrónico es {{user.email}}</p>
 
          <div ng-if="!user.authenticated">
-            <md-button ng-click="authenticate('local')" class="local">
+            <md-button ng-click="authenticate('local')" class="local" ng-if="provider('local')">
                <md-tooltip md-direction="top" md-autohide="true">Inciar sesión en el servidor local</md-tooltip>
                <ng-md-icon icon="login"></ng-md-icon>
-               INICIAR SESIÓN
+               Iniciar sesión
             </md-button>
       
-            <md-button ng-click="authenticate('facebook')" class="facebook">
+            <md-button ng-click="authenticate('facebook')" class="facebook" ng-if="provider('facebook')">
                <md-tooltip md-direction="top" md-autohide="true">Inciar con Facebook</md-tooltip>
                <ng-md-icon icon="facebook"></ng-md-icon>
-               facebook
+               Facebook
             </md-button>
       
-            <md-button ng-click="authenticate('google')" class="google">
+            <md-button ng-click="authenticate('google')" class="google" ng-if="provider('google')">
                <md-tooltip md-direction="top" md-autohide="true">Inciar con Google+</md-tooltip>
                <ng-md-icon icon="google-plus"></ng-md-icon>
-               google
+               Google
             </md-button>
       
-            <md-button ng-click="authenticate('live')" class="microsoft">
-               <md-tooltip md-direction="top" md-autohide="true">Inciar con Microsoft</md-tooltip>
+            <md-button ng-click="authenticate('live')" class="microsoft" ng-if="provider('microsoft')">
+               <md-tooltip md-direction="top" md-autohide="true">Inciar con Microsoft Live</md-tooltip>
                <ng-md-icon icon="windows"></ng-md-icon>
-               microsoft
+               Microsoft
             </md-button>
       
-            <md-button ng-click="authenticate('yahoo')" class="yahoo">
+            <md-button ng-click="authenticate('yahoo')" class="yahoo" ng-if="provider('yahoo')">
                <md-tooltip md-direction="top" md-autohide="true">Inciar con Yahoo!</md-tooltip>
                <ng-md-icon icon="yahoo"></ng-md-icon>
-               yahoo
+               Yahoo
             </md-button>
          </div>
 

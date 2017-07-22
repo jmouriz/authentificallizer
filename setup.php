@@ -10,8 +10,7 @@ $sentence->bindParam(':client', $config['local-application-id']);
 $sentence->bindParam(':password', $config['secure']['local-application-secret']);
 $sentence->bindParam(':uri', $config['local-authorization-provider']);
 $sentence->execute();
-mof\restore($users);
-$users['albert'] = array('email' => 'albert@example.com', 'firstname' => 'Albert', 'lastname' => 'Einstein', 'password' => mof\password('1234'));
+$users = [];
 mof\store($users);
 ?>
 <!doctype html>
@@ -22,22 +21,44 @@ mof\store($users);
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       <link rel="shortcut icon" href="resources/images/application.ico">
       <link rel="stylesheet" href="resources/styles/fonts.css" />
+      <link rel="stylesheet" href="resources/styles/default.css" />
       <link rel="stylesheet" href="resources/styles/setup.css" />
    </head>
    <body>
-      <h2>Bien hecho</h2>
-      <p>Ya puedes comenzar, asegúrate de haber configurado correctamente las URL de redirección en el archivo <b>authorization/common/config.php</b>:</p>
-      <ul>
-         <li><b>Google</b>: <?php print $config['google-authorization-provider']; ?> <a href="https://console.cloud.google.com/">Configurar</a></li>
-         <li><b>Microsoft</b>: <?php print $config['microsoft-authorization-provider']; ?> <a href="https://apps.dev.microsoft.com/">Configurar</a></li>
-         <li><b>Yahoo</b>: <?php print $config['yahoo-authorization-provider']; ?> <a href="https://developer.yahoo.com/">Configurar</a></li>
-         <li><b>Facebook</b>: <?php print $config['facebook-authorization-provider']; ?> <a href="https://developers.facebook.com/">Configurar</a></li>
-      </ul>
-      </p>Las credenciales de acceso a este servidor son:</p>
-      <ul>
-         <li><b>Usuario</b>: albert</li>
-         <li><b>Contraseña</b>: 1234</li>
-      </ul>
-      </p>Puedes <a href="index.php">comenzar</a> una vez que hayas configurado los proveedores que utilizarás.</p>
+      <div class="container">
+         <h2>Ya puedes comenzar...</h2>
+         <p>Ahora debes configurar las URL de redirección en el archivo <b>authorization/common/config.php</b> para los proveedores que quieras utilizar:</p>
+         <table>
+            <thead>
+               <tr>
+                  <th>Proveedor</th>
+                  <th colspan="2">URL de redirección</th>
+               </tr>
+            </thead>
+            </tbody>
+               <tr>
+                  <th>Google+</th>
+                  <td><?php print $config['google-authorization-provider']; ?></td>
+                  <td><a href="https://console.cloud.google.com/">Configurar</a></td>
+               </tr>
+               <tr>
+                  <th>Microsoft</th>
+                  <td><?php print $config['microsoft-authorization-provider']; ?></td>
+                  <td><a href="https://apps.dev.microsoft.com/">Configurar</a></td>
+               </tr>
+               <tr>
+                  <th>Yahoo!</th>
+                  <td><?php print $config['yahoo-authorization-provider']; ?></td>
+                  <td><a href="https://developer.yahoo.com/">Configurar</a></td>
+               </tr>
+               <tr>
+                  <th>Facebook</th>
+                  <td><?php print $config['facebook-authorization-provider']; ?></td>
+                  <td><a href="https://developers.facebook.com/">Configurar</a></td>
+               </tr>
+            </tbody>
+         </table>
+         </p>O puedes <a href="index.php">comenzar ahora</a> a usar la autentificación local.</p>
+      </div>
    </body>
 </html>

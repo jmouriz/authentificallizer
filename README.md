@@ -2,15 +2,17 @@
 
 Este repositorio contiene un ejemplo completo y funcional de cómo usar [Satellizer](https://github.com/sahat/satellizer) para iniciar sesión usando OAuth 2.0 con diversos proveedores en tu sitio y recibir información del perfil del usuario. Incluye el código del lado del servidor para enlazar con tus usuarios y un servidor OAuth 2.0 propio.
 
-![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-1.png "Screenshot")
+![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-1.png)
 
-![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-2.png "Screenshot")
+![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-2.png)
 
-![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-3.png "Screenshot")
+![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-3.png)
 
-![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-4.png "Screenshot")
+![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-4.png)
 
-![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-5.png "Screenshot")
+![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-5.png)
+
+![screenshot](https://jmouriz.github.io/resources/images/screenshots/authentificallizer-6.png)
 
 ## Importante
 

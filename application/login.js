@@ -10,6 +10,11 @@ application.controller('Login', ['$scope', '$auth', function($scope, $auth) {
          $scope.public.busy = false;
       }).catch(function(response) {
          $scope.public.busy = false;
+         $scope.error = true;
       });
    };
+
+   $scope.provider = function(provider) {
+      return config[provider + '-application-id'] !== false;
+   }
 }]);

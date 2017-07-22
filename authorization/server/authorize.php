@@ -1,12 +1,29 @@
 <?php
 require 'server.php';
 
-$client = mof\input('client_id');
-$resources = explode(' ', mof\input('scope'));
+mof\session();
+
 $authorized = (mof\input('authorized', 'no') === 'yes');
 $username = mof\logged();
 $request = OAuth2\Request::createFromGlobals();
 $response = new OAuth2\Response();
+
+$_SESSION['client'] = mof\input('client_id');
+$_SESSION['resources'] = explode(' ', mof\input('scope'));
+
+function show($template) {
+   require "../templates/$template.php";
+   exit();
+}
+
+function authorize($username) {
+   if (!defined($users)) {
+      mof\restore($users);
+   }
+   $_SESSION['firstname'] = $users[$username]['firstname'];
+   $_SESSION['lastname'] = $users[$username]['lastname'];
+   show('authorize');
+}
 
 if (!$server->validateAuthorizeRequest($request, $response)) {
    $response->send();
@@ -15,11 +32,10 @@ if (!$server->validateAuthorizeRequest($request, $response)) {
 
 if (empty($_POST)) {
    if ($username) {
-      require '../templates/authorize.php';
+      authorize($username);
    } else {
-      require '../templates/login.php';
+      show('login');
    }
-   exit();
 }
 
 if (!$authorized) {
@@ -30,8 +46,7 @@ if (!$authorized) {
    if (array_key_exists($username, $users)) {
       if (mof\password($password, $users[$username]['password'])) {
          mof\login($username);
-         require '../templates/authorize.php';
-         exit();
+         authorize($username);
       }
    }
 }
