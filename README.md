@@ -1,4 +1,4 @@
-# AngularJS Satellizer Demo
+# Authentificallizer
 
 Este repositorio contiene un ejemplo completo y funcional de cómo usar [Satellizer](https://github.com/sahat/satellizer) para iniciar sesión usando OAuth 2.0 con diversos proveedores en tu sitio y recibir información del perfil del usuario. Incluye el código del lado del servidor para enlazar con tus usuarios y un servidor OAuth 2.0 propio.
 
