@@ -23,7 +23,7 @@ $config = json_encode($config);
       <md-backdrop class="md-opaque busy" ng-if="public.busy"></md-backdrop>
 
       <div ng-controller="Login" class="login">
-         <h1>AngularJS Satellizer Demo</h1>
+         <h1>Authentificallizer</h1>
    
          <p ng-if="user.authenticated">Bienvenido {{user.firstname}} {{user.lastname}}, tu correo electrónico es {{user.email}}</p>
 

@@ -12,6 +12,10 @@ div.login {
    border: 2px solid black;
 }
 
+h1 {
+   text-align: center;
+}
+
 .md-button.local:not([disabled]),
 .md-button.local:not([disabled]):hover {
    background-color: #e91e63;
