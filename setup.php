@@ -15,7 +15,7 @@ $sentence->execute();
    <head>
       <meta charset="utf-8" />
       <title>Instalación</title>
-  	  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       <link rel="shortcut icon" href="resources/images/application.ico">
       <link rel="stylesheet" href="resources/styles/fonts.css" />
       <link rel="stylesheet" href="resources/styles/setup.css" />
