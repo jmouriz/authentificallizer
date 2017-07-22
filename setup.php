@@ -27,7 +27,7 @@ mof\store($users);
    <body>
       <div class="container">
          <h2>Ya puedes comenzar...</h2>
-         <p>Ahora debes configurar las URL de redirección en el archivo <b>authorization/common/config.php</b> para los proveedores que quieras utilizar:</p>
+         <p>Ahora debes configurar las URL de redirección en el panel del desarrollador de los proveedores que desees utilizar. Luego edita los valores del archivo <b>authorization/common/config.php</b> para incorporar las claves de cada uno:</p>
          <table>
             <thead>
                <tr>
