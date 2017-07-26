@@ -1,12 +1,14 @@
 <?php
+require '../model/user.php';
 require 'server.php';
 
 mof\session();
 
 $authorized = (mof\input('authorized', 'no') === 'yes');
-$username = mof\logged();
+$email = mof\logged();
 $request = OAuth2\Request::createFromGlobals();
 $response = new OAuth2\Response();
+$user = new User();
 
 $_SESSION['client'] = mof\input('client_id');
 $_SESSION['resources'] = explode(' ', mof\input('scope'));
@@ -16,12 +18,9 @@ function show($template) {
    exit();
 }
 
-function authorize($username) {
-   if (!defined($users)) {
-      mof\restore($users);
-   }
-   $_SESSION['firstname'] = $users[$username]['firstname'];
-   $_SESSION['lastname'] = $users[$username]['lastname'];
+function authorize($email) {
+   global $user;
+   $_SESSION['firstname'] = $user->firstname;
    show('authorize');
 }
 
@@ -31,27 +30,25 @@ if (!$server->validateAuthorizeRequest($request, $response)) {
 }
 
 if (empty($_POST)) {
-   if ($username) {
-      authorize($username);
+   if ($email) {
+      $user->select($email);
+      authorize($email);
    } else {
       show('login');
    }
 }
 
 if (!$authorized) {
-   $username = mof\input('username');
+   $email = mof\input('email');
    $password = mof\input('password');
 
-   mof\restore($users);
-   if (array_key_exists($username, $users)) {
-      if (mof\password($password, $users[$username]['password'])) {
-         mof\login($username);
-         authorize($username);
-      }
+   if ($user->login($email, $password)) {
+      mof\login($email);
+      authorize($email);
    }
 }
 
-$server->handleAuthorizeRequest($request, $response, $authorized, $username);
+$server->handleAuthorizeRequest($request, $response, $authorized, $email);
 
 if ($authorized) {
    $code = substr($response->getHttpHeader('Location'), strpos($response->getHttpHeader('Location'), 'code=')+5, 40);

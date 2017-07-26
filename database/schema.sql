@@ -63,3 +63,13 @@ create table oauth_jwt (
    public_key varchar(2000),
    constraint client_id_pk primary key (client_id)
 );
+
+create table users (
+   email varchar(255) not null,
+   password varchar(2000),
+   firstname varchar(255),
+   lastname varchar(255),
+   phone varchar(255),
+   constraint username_pk primary key (email)
+);
+

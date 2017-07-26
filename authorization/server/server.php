@@ -1,14 +1,14 @@
 <?php
 require '../libraries/vendor/autoload.php';
-
-$path = __DIR__;
-$connection = "sqlite:$path/authorization.db";
-$username = null;
-$password = null;
+require '../common/config.php';
 
 OAuth2\Autoloader::register();
 
-$storage = new OAuth2\Storage\Pdo(array('dsn' => $connection, 'username' => $username, 'password' => $password));
+$storage = new OAuth2\Storage\Pdo(array(
+   'dsn' => $config['secure']['database-connection-string'],
+   'username' => $config['secure']['database-username'],
+   'password' => $config['secure']['database-password'],
+));
 $server = new OAuth2\Server($storage);
 $server->addGrantType(new OAuth2\GrantType\ClientCredentials($storage));
 $server->addGrantType(new OAuth2\GrantType\RefreshToken($storage));

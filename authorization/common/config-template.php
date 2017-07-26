@@ -4,6 +4,11 @@ $config = array();
 $base = 'http://127.0.0.1/authentificallizer/authorization';
 $server = "$base/server";
 $providers = "$base/providers";
+$path = __DIR__;
+
+$config['secure']['database-connection-string'] = "sqlite:$path/../authorization.db";
+$config['secure']['database-username'] = 'DATABASE USERNAME';
+$config['secure']['database-password'] = 'DATABASE PASSWORD';
 
 $config['authorization-endpoint'] = "$server/authorize.php";
 $config['get-token-endpoint'] = "$server/token.php";

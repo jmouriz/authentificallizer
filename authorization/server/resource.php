@@ -1,4 +1,5 @@
 <?php
+require '../model/user.php';
 require 'server.php';
 
 $request = OAuth2\Request::createFromGlobals();
@@ -15,8 +16,12 @@ if (!$server->verifyResourceRequest($request, $response, 'profile')) {
 }
 
 $token = $server->getAccessTokenData($request);
-$username = $token['user_id'];
+$email = $token['user_id'];
 
-mof\restore($users);
-mof\json($users[$username]);
+$user = new User();
+$response = (array) $user->select($email);
+
+mof\log($response, true);
+
+mof\json($response);
 ?>

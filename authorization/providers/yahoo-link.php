@@ -19,18 +19,17 @@ foreach ($profile['emails'] as $node) {
    }
 }
 
-$hash = hash('md5', $email);
 mof\restore($users);
-if (!array_key_exists($hash, $users)) {
+if (!array_key_exists($email, $users)) {
    $user = array();
-   $user['email'] = $email;
    $user['firstname'] = $profile['givenName'];
    $user['lastname'] = $profile['familyName'];
-   $users[$hash] = $user;
+   $users[$email] = $user;
    mof\store($users);
 } else {
-   $user = $users[$hash];
+   $user = $users[$email];
 }
+$user['email'] = $email;
 
 mof\json(array('status' => 'ok', 'user' => $user));
 ?>

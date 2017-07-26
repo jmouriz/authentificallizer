@@ -12,18 +12,17 @@ $response = $client->request('GET', 'https://www.googleapis.com/plus/v1/people/m
 $profile = json_decode($response->getBody(), true);
 
 $email = $profile['email'];
-$hash = hash('md5', $email);
 mof\restore($users);
-if (!array_key_exists($hash, $users)) {
+if (array_key_exists($email, $users)) {
    $user = array();
-   $user['email'] = $email;
    $user['firstname'] = $profile['given_name'];
    $user['lastname'] = $profile['family_name'];
-   $users[$hash] = $user;
+   $users[$email] = $user;
    mof\store($users);
 } else {
-   $user = $users[$hash];
+   $user = $users[$email];
 }
+$user['email'] = $email;
 
 mof\json(array('status' => 'ok', 'user' => $user));
 ?>

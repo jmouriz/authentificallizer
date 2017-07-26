@@ -1,5 +1,6 @@
 <?php
 require '../libraries/vendor/autoload.php';
+require '../model/user.php';
 
 mof\session();
 
@@ -7,26 +8,27 @@ if (!array_key_exists('redirect', $_SESSION)) {
    $_SESSION['redirect'] = $_SERVER['HTTP_REFERER'];
 }
 
-$username = mof\input('username');
 $email = mof\input('email');
+$password = mof\input('password');
 $firstname = mof\input('firstname');
 $lastname = mof\input('lastname');
-$password = mof\input('password');
+$phone = mof\input('phone');
 $exists = false;
 $incomplete = false;
 
-if ($username || $email || $firstname || $lastname || $password) {
-   if ($username && $email && $firstname && $lastname && $password) {
-      mof\restore($users);
-      if (array_key_exists($username, $users)) {
+if ($email || $password) {
+   if ($email && $password) {
+      $user = new User();
+      if ($user->select($email)) {
          $exists = true;
       } else {
-         $users[$username]['email'] = $email;
-         $users[$username]['firstname'] = $firstname;
-         $users[$username]['lastname'] = $lastname;
-         $users[$username]['password'] = mof\password($password);
-         mof\store($users);
-         mof\login($username);
+         $user->email = $email;
+         $user->password = mof\password($password);
+         $user->firstname = $firstname;
+         $user->lastname = $lastname;
+         $user->phone = $phone;
+         $user->register();
+         mof\login($email);
          mof\redirect($_SESSION['redirect']);
       }
    } else {
@@ -55,11 +57,11 @@ if ($username || $email || $firstname || $lastname || $password) {
             <?php if ($incomplete): ?>
             <p class="error">Faltan datos</p>
             <?php endif ?>
-            <input name="username" type="text" placeholder="Usuario" value="<?php print $username; ?>" /><br />
-            <input name="email" type="email" placeholder="Correo electrónico" value="<?php print $email; ?>" /><br />
+            <input name="email" type="email" placeholder="Correo electrónico" value="<?php print $email; ?>" required /><br />
+            <input name="password" type="password" placeholder="Contraseña" required /><br />
             <input name="firstname" type="text" placeholder="Nombre" value="<?php print $firstname; ?>" /><br />
             <input name="lastname" type="text" placeholder="Apellido" value="<?php print $lastname; ?>" /><br />
-            <input name="password" type="password" placeholder="Contraseña" /><br />
+            <input name="phone" type="tel" placeholder="Teléfono" value="<?php print $phone; ?>" /><br />
             <button type="submit">Listo</button>
             <button type="reset">Cancelar</button>
          </form>

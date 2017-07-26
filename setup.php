@@ -1,8 +1,7 @@
 <?php
-require 'authorization/libraries/vendor/autoload.php';
 require 'authorization/common/config.php';
 $path = __DIR__;
-$db = new PDO("sqlite:$path/authorization/server/authorization.db");
+$db = new PDO($config['secure']['database-connection-string'], $config['secure']['database-username'], $config['secure']['database-password']);
 $sql = file_get_contents("$path/database/schema.sql");
 $db->exec($sql);
 $sentence = $db->prepare('insert into oauth_clients (client_id, client_secret, redirect_uri) values (:client, :password, :uri)');
@@ -10,8 +9,6 @@ $sentence->bindParam(':client', $config['local-application-id']);
 $sentence->bindParam(':password', $config['secure']['local-application-secret']);
 $sentence->bindParam(':uri', $config['local-authorization-provider']);
 $sentence->execute();
-$users = [];
-mof\store($users);
 ?>
 <!doctype html>
 <html lang="es">

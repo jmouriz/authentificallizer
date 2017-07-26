@@ -4,7 +4,6 @@ require '../libraries/vendor/autoload.php';
 mof\session();
 $client = $_SESSION['client'];
 $firstname = $_SESSION['firstname'];
-$lastname = $_SESSION['lastname'];
 $resources = $_SESSION['resources'];
 ?>
 <!doctype html>

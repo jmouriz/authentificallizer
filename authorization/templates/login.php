@@ -13,8 +13,8 @@
       <div class="container">
          <form method="post">
             <h4>Iniciar sesión</h4>
-            <input name="username" type="text" placeholder="Usuario" /><br />
-            <input name="password" type="password" placeholder="Contraseña" /><br />
+            <input name="email" type="email" placeholder="Correo electrónico" required /><br />
+            <input name="password" type="password" placeholder="Contraseña" required /><br />
             <button type="submit">Iniciar</button>
             <button type="reset">Cancelar</button>
             <p>¿Aún no tienes cuenta? <a href="authorization/templates/register.php">Registra una nueva</a></p>
