@@ -38,7 +38,7 @@ class User extends Model {
 
    public function login($username, $password) {
       $user = $this->select($username);
-      return $user ? mof\password($password, $user->password) : false;
+      return $user ? (sha1($password) == $user->password) : false;
    }
 
    public function register() {

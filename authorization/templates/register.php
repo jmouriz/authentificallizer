@@ -23,7 +23,7 @@ if ($email || $password) {
          $exists = true;
       } else {
          $user->username = $email;
-         $user->password = mof\password($password);
+         $user->password = sha1($password);
          $user->first_name = $firstname;
          $user->last_name = $lastname;
          $user->phone = $phone;
