@@ -4,14 +4,17 @@ class Model {
    protected $connection;
    protected $data;
 
-   public function __construct($string, $username, $password) {
+   public function __construct($string, $username = null, $password = null) {
       $options = array(
          PDO::ATTR_PERSISTENT => true,
          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
       );
       $this->connection = new PDO($string, $username, $password, $options);
-      //$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $this->data = (object) array();
+   }
+
+   public function __destruct() {
+      $this->connection = null;
    }
 
    public function __set($key, $value) {

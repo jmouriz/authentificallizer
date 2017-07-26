@@ -12,6 +12,10 @@ class User extends Model {
       parent::__construct($config['secure']['database-connection-string'], $config['secure']['database-username'], $config['secure']['database-password']);
    }
 
+   public function __destruct() {
+      parent::__cdestruct();
+   }
+
    public function id($username) {
       $this->username = $username;
    }
