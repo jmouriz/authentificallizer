@@ -21,7 +21,5 @@ $email = $token['user_id'];
 $user = new User();
 $response = (array) $user->select($email);
 
-mof\log($response, true);
-
 mof\json($response);
 ?>
