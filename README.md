@@ -1,6 +1,6 @@
 # Authentificallizer
 
-Este repositorio contiene un ejemplo completo y funcional de cómo usar [Satellizer](https://github.com/sahat/satellizer) para iniciar sesión usando un servidor local OAuth 2.0 (([RFC 6749: The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749)) y con diversos proveedores externos en tu sitio y recibir información del perfil del usuario. Incluye el código del lado del servidor para enlazar con tus usuarios y un servidor OAuth 2.0 propio que soporta múltiples `scopes` ([RFC 6749: The OAuth 2.0 Authorization Framework, 3.3. Access Token Scope](https://tools.ietf.org/html/rfc6749#section-3.3)).
+Este repositorio contiene un ejemplo completo y funcional de cómo usar [Satellizer](https://github.com/sahat/satellizer) para iniciar sesión usando un servidor local OAuth 2.0 ([RFC 6749: The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749)) y con diversos proveedores externos en tu sitio y recibir información del perfil del usuario. Incluye el código del lado del servidor para enlazar con tus usuarios y un servidor OAuth 2.0 propio que soporta múltiples `scopes` ([RFC 6749: The OAuth 2.0 Authorization Framework, 3.3. Access Token Scope](https://tools.ietf.org/html/rfc6749#section-3.3)).
 
 # Pantallazos
 
