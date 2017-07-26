@@ -24,7 +24,7 @@ $user->select($email);
 $response = array();
 $response['email'] = $user->username;
 $response['firstname'] = $user->first_name;
-$response['flastname'] = $user->last_name;
+$response['lastname'] = $user->last_name;
 
 mof\json($response);
 ?>

@@ -5,8 +5,12 @@ class Model {
    protected $data;
 
    public function __construct($string, $username, $password) {
-      $this->connection = new PDO($string, $username, $password);
-      $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $options = array(
+         PDO::ATTR_PERSISTENT => true,
+         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+      );
+      $this->connection = new PDO($string, $username, $password, $options);
+      //$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $this->data = (object) array();
    }
 

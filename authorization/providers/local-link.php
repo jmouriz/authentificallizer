@@ -12,11 +12,6 @@ $response = $client->request('POST', $config['resource-api-endpoint'], array('fo
 )));
 $profile = json_decode($response->getBody(), true);
 
-$user = array();
-$user['email'] = $profile['email'];
-$user['firstname'] = $profile['firstname'];
-$user['lastname'] = $profile['lastname'];
-
-mof\json(array('status' => 'ok', 'user' => $user));
+mof\json(array('status' => 'ok', 'user' => $profile));
 ?>
 
