@@ -1,20 +1,10 @@
 <?php
 $path = __DIR__;
-require "$path/../common/config.php";
 require "$path/../common/model.php";
 
 class User extends Model {
    protected $fields = array('username', 'password', 'first_name', 'last_name', 'phone');
    private $table = 'oauth_users';
-
-   public function __construct() {
-      global $config;
-      parent::__construct($config['secure']['database-connection-string'], $config['secure']['database-username'], $config['secure']['database-password']);
-   }
-
-   public function __destruct() {
-      parent::__cdestruct();
-   }
 
    public function id($username) {
       $this->username = $username;

@@ -1,15 +1,23 @@
 <?php
+require 'config.php';
+
 class Model {
    protected $fields = array();
    protected $connection;
    protected $data;
 
-   public function __construct($string, $username = null, $password = null) {
+   public function __construct() {
+      global $config;
       $options = array(
          PDO::ATTR_PERSISTENT => true,
          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
       );
-      $this->connection = new PDO($string, $username, $password, $options);
+      $this->connection = new PDO(
+         $config['secure']['database-connection-string'],
+         $config['secure']['database-username'],
+         $config['secure']['database-password'],
+         $options
+      );
       $this->data = (object) array();
    }
 
