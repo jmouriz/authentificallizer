@@ -44,14 +44,6 @@ create table oauth_refresh_tokens (
    constraint refresh_token_pk primary key (refresh_token)
 );
 
-create table oauth_users (
-   username varchar(255) not null,
-   password varchar(2000),
-   first_name varchar(255),
-   last_name varchar(255),
-   constraint username_pk primary key (username)
-);
-
 create table oauth_scopes (
    scope text,
    is_default boolean
@@ -64,12 +56,11 @@ create table oauth_jwt (
    constraint client_id_pk primary key (client_id)
 );
 
-create table users (
-   email varchar(255) not null,
+create table oauth_users (
+   username varchar(255) not null,
    password varchar(2000),
-   firstname varchar(255),
-   lastname varchar(255),
+   first_name varchar(255),
+   last_name varchar(255),
    phone varchar(255),
-   constraint username_pk primary key (email)
+   constraint username_pk primary key (username)
 );
-

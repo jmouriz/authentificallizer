@@ -19,7 +19,12 @@ $token = $server->getAccessTokenData($request);
 $email = $token['user_id'];
 
 $user = new User();
-$response = (array) $user->select($email);
+$user->select($email);
+
+$response = array();
+$response['email'] = $user->username;
+$response['firstname'] = $user->first_name;
+$response['flastname'] = $user->last_name;
 
 mof\json($response);
 ?>

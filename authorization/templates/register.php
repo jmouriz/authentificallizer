@@ -22,10 +22,10 @@ if ($email || $password) {
       if ($user->select($email)) {
          $exists = true;
       } else {
-         $user->email = $email;
+         $user->username = $email;
          $user->password = mof\password($password);
-         $user->firstname = $firstname;
-         $user->lastname = $lastname;
+         $user->first_name = $firstname;
+         $user->last_name = $lastname;
          $user->phone = $phone;
          $user->register();
          mof\login($email);

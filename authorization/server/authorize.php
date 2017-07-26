@@ -20,7 +20,7 @@ function show($template) {
 
 function authorize($email) {
    global $user;
-   $_SESSION['firstname'] = $user->firstname;
+   $_SESSION['firstname'] = $user->first_name;
    show('authorize');
 }
 

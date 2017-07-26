@@ -1,6 +1,6 @@
 <?php
 require '../libraries/vendor/autoload.php';
-require '../common/config.php';
+require '../model/user.php';
 
 mof\session();
 $token = $_SESSION['token'];
@@ -19,17 +19,17 @@ foreach ($profile['emails'] as $node) {
    }
 }
 
-mof\restore($users);
-if (!array_key_exists($email, $users)) {
-   $user = array();
-   $user['firstname'] = $profile['givenName'];
-   $user['lastname'] = $profile['familyName'];
-   $users[$email] = $user;
-   mof\store($users);
-} else {
-   $user = $users[$email];
+$user = new User();
+if (!$user->select($email)) {
+   $user->username = $email;
+   $user->first_name = $profile['givenName'];
+   $user->last_name = $profile['familyName'];
+   $user->register;
 }
-$user['email'] = $email;
+$response = array();
+$response['email'] = $user->email;
+$response['firstname'] = $user->first_name;
+$response['lastname'] = $user->last_name;
 
-mof\json(array('status' => 'ok', 'user' => $user));
+mof\json(array('status' => 'ok', 'user' => $response));
 ?>
