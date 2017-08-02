@@ -4,7 +4,9 @@ require 'config.php';
 class Model {
    protected $fields = array();
    protected $connection;
+   protected $table;
    protected $data;
+   protected $key;
 
    public function __construct() {
       global $config;
@@ -50,6 +52,39 @@ class Model {
 
    public function get() {
       return $this->data;
+   }
+
+   public function key($value) {
+      $key = $this->key;
+      $this->$key = $value;
+   }
+
+   public function all() {
+      $query = $this->query("select * from {$this->table}");
+      return $query->fetchAll(PDO::FETCH_ASSOC);
+   }
+
+   public function select($key) {
+      $this->key($key);
+      $query = $this->query("select * from {$this->table} where {$this->key} = :{$this->key}");
+      $data = $query->fetch(PDO::FETCH_OBJ);
+      if ($data) {
+         $this->data = $data;
+      }
+      return $data;
+   }
+
+   public function insert() {
+      $fields = implode(',', $this->fields);
+      $values = implode(',', array_map(function ($field) {
+         return ":$field";
+      }, $this->fields));
+      $this->query("insert into {$this->table} ($fields) values ($values)");
+   }
+
+   public function delete($key) {
+      $this->key($key);
+      $this->query("delete from {$this->table} where {$this->key} = :{$this->key}");
    }
 }
 ?>

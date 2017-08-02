@@ -4,39 +4,16 @@ require "$path/../common/model.php";
 
 class User extends Model {
    protected $fields = array('username', 'password', 'first_name', 'last_name', 'phone');
-   private $table = 'oauth_users';
+   protected $table = 'oauth_users';
+   protected $key = 'username';
 
-   public function id($username) {
-      $this->username = $username;
-   }
-
-   public function all() {
-      $query = $this->query("select * from {$this->table}");
-      return $query->fetchAll(PDO::FETCH_ASSOC);
-   }
-
-   public function select($username) {
-      $this->id($username);
-      $query = $this->query("select * from {$this->table} where username = :username");
-      $data = $query->fetch(PDO::FETCH_OBJ);
-      if ($data) {
-         $this->data = $data;
-      }
-      return $data;
-   }
-
-   public function delete($username) {
-      $this->id($username);
-      $this->query("delete from {$this->table} where username = :username");
-   }
-
-   public function login($username, $password) {
-      $user = $this->select($username);
+   public function login($key, $password) {
+      $user = $this->select($key);
       return $user ? (sha1($password) == $user->password) : false;
    }
 
    public function register() {
-      $this->query("insert into {$this->table} (username, password, first_name, last_name, phone) values (:username, :password, :first_name, :last_name, :phone)");
+      $this->insert();
    }
 }
 ?>
