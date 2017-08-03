@@ -1,5 +1,4 @@
 <?php
-require '../libraries/vendor/autoload.php';
 require '../model/user.php';
 
 mof\session();
@@ -27,7 +26,7 @@ if ($email || $password) {
          $user->first_name = $firstname;
          $user->last_name = $lastname;
          $user->phone = $phone;
-         $user->register();
+         $user->save();
          mof\login($email);
          mof\redirect($_SESSION['redirect']);
       }
