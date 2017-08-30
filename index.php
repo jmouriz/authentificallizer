@@ -9,7 +9,7 @@ $config = json_encode($config);
       <meta charset="utf-8" />
       <title>Satellizer Demo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-      <link rel="shortcut icon" href="resources/images/application.ico">
+      <!--link rel="shortcut icon" href="resources/images/application.ico"-->
       <link rel="stylesheet" href="resources/styles/default.css" />
       <link rel="stylesheet" href="resources/styles/fonts.css" />
       <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css" />
@@ -73,7 +73,7 @@ $config = json_encode($config);
       <script src="bower_components/angular-animate/angular-animate.min.js"></script>
       <script src="bower_components/angular-material/angular-material.min.js"></script>
       <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
-      <script src="bower_components/satellizer/dist/satellizer.min.js"></script> <!-- La nomenclatura de Satellizer no encaja -->
+      <script src="bower_components/satellizer/dist/satellizer.js"></script> <!-- La nomenclatura de Satellizer no encaja -->
 
       <script src="application/module.js"></script>
       <script src="application/config.js"></script>

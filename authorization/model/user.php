@@ -4,9 +4,14 @@ require "$path/../libraries/vendor/autoload.php";
 require "$path/../common/config.php";
 
 $string = $config['secure']['database-connection-string'];
+$username = $config['secure']['database-username'];
+$password = $config['secure']['database-password'];
+
+ORM\connect($string, $username, $password);
 
 class User extends ORM\Model {
-   protected $fields = array('username', 'password', 'first_name', 'last_name', 'phone');
+   protected $columns = array('username', 'password', 'first_name', 'last_name', 'phone');
+   protected $protected = array('password');
    protected $table = 'oauth_users';
    protected $key = 'username';
 
