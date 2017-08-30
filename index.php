@@ -73,7 +73,7 @@ $config = json_encode($config);
       <script src="bower_components/angular-animate/angular-animate.min.js"></script>
       <script src="bower_components/angular-material/angular-material.min.js"></script>
       <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
-      <script src="bower_components/satellizer/dist/satellizer.js"></script> <!-- La nomenclatura de Satellizer no encaja -->
+      <script src="bower_components/satellizer/dist/satellizer.min.js"></script> <!-- La nomenclatura de Satellizer no encaja -->
 
       <script src="application/module.js"></script>
       <script src="application/config.js"></script>

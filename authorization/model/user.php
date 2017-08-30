@@ -15,6 +15,10 @@ class User extends ORM\Model {
    protected $table = 'oauth_users';
    protected $key = 'username';
 
+   public function register() {
+      $this->insert();
+   }
+
    public function login($key, $password) {
       $user = $this->select($key);
       return $user ? (sha1($password) == $user->password) : false;

@@ -26,7 +26,7 @@ if ($email || $password) {
          $user->first_name = $firstname;
          $user->last_name = $lastname;
          $user->phone = $phone;
-         $user->save();
+         $user->register();
          mof\login($email);
          mof\redirect($_SESSION['redirect']);
       }
